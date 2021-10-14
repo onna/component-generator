@@ -1,4 +1,3 @@
-
 from component_generator.cli import main
 
 
