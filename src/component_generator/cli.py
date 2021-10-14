@@ -16,11 +16,15 @@ Why does this file exist, and why not put this in __main__?
 """
 import argparse
 
-parser = argparse.ArgumentParser(description='Command description.')
-parser.add_argument('names', metavar='NAME', nargs=argparse.ZERO_OR_MORE,
-                    help="A name of something.")
+parser = argparse.ArgumentParser(description="Component Generator.")
+parser.add_argument("--component", help="Component name.")
+parser.add_argument("--service", help="Service name.")
+parser.add_argument("--consumer", help="Consumer name.")
 
 
 def main(args=None):
     args = parser.parse_args(args=args)
-    print(args.names)
+    parts = args.component or args.service or args.upload
+
+    if not parts:
+        parser.error("Please pass one of the component, service, or consumer args")
