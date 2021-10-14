@@ -12,8 +12,7 @@ Overview
     * - build
       - |github|
     * - tests
-      - | |travis| |appveyor| |requires|
-        | |codecov|
+      - | 
     * - package
       - | |version| |wheel| |supported-versions| |supported-implementations|
         | |commits-since|
@@ -24,10 +23,6 @@ Overview
 .. |github| image:: https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg
     :alt: GitHub Workflow Status
     :target: https://github.com/onna/component-generator/actions
-
-.. |codecov| image:: https://codecov.io/gh/onna/python-component-generator/branch/master/graphs/badge.svg?branch=master
-    :alt: Coverage Status
-    :target: https://codecov.io/github/onna/python-component-generator
 
 .. |version| image:: https://img.shields.io/pypi/v/component-generator.svg
     :alt: PyPI Package latest release
