@@ -14,8 +14,7 @@ Overview
     * - tests
       - | 
     * - package
-      - | |version| |wheel| |supported-versions| |supported-implementations|
-        | |commits-since|
+      - | |version| |wheel|
 .. |docs| image:: https://readthedocs.org/projects/python-component-generator/badge/?style=flat
     :target: https://python-component-generator.readthedocs.io/
     :alt: Documentation Status
@@ -31,20 +30,6 @@ Overview
 .. |wheel| image:: https://img.shields.io/pypi/wheel/component-generator.svg
     :alt: PyPI Wheel
     :target: https://pypi.org/project/component-generator
-
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/component-generator.svg
-    :alt: Supported versions
-    :target: https://pypi.org/project/component-generator
-
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/component-generator.svg
-    :alt: Supported implementations
-    :target: https://pypi.org/project/component-generator
-
-.. |commits-since| image:: https://img.shields.io/github/commits-since/onna/python-component-generator/v0.0.0.svg
-    :alt: Commits since latest release
-    :target: https://github.com/onna/python-component-generator/compare/v0.0.0...master
-
-
 
 .. end-badges
 
