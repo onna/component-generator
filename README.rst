@@ -9,6 +9,8 @@ Overview
 
     * - docs
       - |docs|
+    * - build
+      - |github|
     * - tests
       - | |travis| |appveyor| |requires|
         | |codecov|
