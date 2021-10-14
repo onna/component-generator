@@ -19,17 +19,9 @@ Overview
     :target: https://python-component-generator.readthedocs.io/
     :alt: Documentation Status
 
-.. |travis| image:: https://api.travis-ci.com/onna/python-component-generator.svg?branch=master
-    :alt: Travis-CI Build Status
-    :target: https://travis-ci.com/github/onna/python-component-generator
-
-.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/onna/python-component-generator?branch=master&svg=true
-    :alt: AppVeyor Build Status
-    :target: https://ci.appveyor.com/project/onna/python-component-generator
-
-.. |requires| image:: https://requires.io/github/onna/python-component-generator/requirements.svg?branch=master
-    :alt: Requirements Status
-    :target: https://requires.io/github/onna/python-component-generator/requirements/?branch=master
+.. |github| image:: https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg
+    :alt: GitHub Workflow Status
+    :target: https://github.com/onna/component-generator/actions
 
 .. |codecov| image:: https://codecov.io/gh/onna/python-component-generator/branch/master/graphs/badge.svg?branch=master
     :alt: Coverage Status
@@ -61,7 +53,7 @@ Overview
 
 Generate backend components quickly
 
-* Free software: BSD 2-Clause License
+* Free software: MIT License
 
 Installation
 ============
