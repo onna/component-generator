@@ -1,4 +1,5 @@
-from typing import Dict
+import os
+from typing import Dict, Optional
 
 
 def generate(structure: Dict[str, str], settings: Dict[str, str]):
@@ -15,3 +16,11 @@ def insert_info_file(filepath: str, filedata_part: str, settings: Dict[str, str]
 
 def generate_file(filepath: str, filedata: str, settings: Dict[str, str]):
     pass
+
+
+def create_folder_for_filepath(filepath: str):
+    try:
+        folderpath = filepath[:filepath.rindex("/")]
+        os.makedirs(folderpath)
+    except (ValueError, FileExistsError):
+        pass
