@@ -1,6 +1,6 @@
 from pytest_mock import MockFixture  # type: ignore
 
-from component_generator.generate import generate, create_folder_for_filepath
+from component_generator.generate import generate, create_folder_for_filepath, populate_setting_values
 
 
 def test_generate_should_call_insert_info_file_if_filepath_startswith_plus(mocker: MockFixture):
@@ -38,3 +38,18 @@ def test_create_folder_for_filepath_doesnt_create_anything_if_no_folderpath(mock
 def test_create_folder_for_filepath_if_folder_already_exists(mocker: MockFixture):
     mocker.patch("os.makedirs", side_effect=FileExistsError())
     create_folder_for_filepath("already_exists/dummy_file")
+
+
+def test_populate_setting_values():
+    assert (
+        populate_setting_values(
+            "${this}_${is} ${a} test_${dummy}", {"this": "these", "is": "are", "a": "", "dummy": "dummies"}
+        )
+        == "these_are  test_dummies"
+    )
+    assert (
+        populate_setting_values(
+            "$no} changes\nto{this} ${string", {"no": "none", "this": "these", "string": "strings"}
+        )
+        == "$no} changes\nto{this} ${string"
+    )
