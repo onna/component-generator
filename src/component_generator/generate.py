@@ -4,6 +4,8 @@ from enum import Enum
 from typing import Dict
 
 from component_files.component import COMPONENT_FILES
+from component_files.consumer import CONSUMER_FILES
+from component_files.service import SERVICE_FILES
 from helpers import populate_setting_values, create_folder_for_filepath
 from info_file import append_to_info_file
 
@@ -16,7 +18,11 @@ class ComponentType(Enum):
     CONSUMER = "consumer"
 
 
-COMPONENT_FILESTRUCTURE = {ComponentType.COMPONENT: COMPONENT_FILES}
+COMPONENT_FILESTRUCTURE = {
+    ComponentType.COMPONENT: COMPONENT_FILES,
+    ComponentType.SERVICE: SERVICE_FILES,
+    ComponentType.CONSUMER: CONSUMER_FILES,
+}
 
 
 def generate_component(component_type: ComponentType, component_name: str):
@@ -34,6 +40,7 @@ def generate(structure: Dict[str, str], settings: Dict[str, str]):
 
 
 def generate_file(filepath: str, filedata: str, settings: Dict[str, str]):
+    filepath = f"component/{filepath}"
     populated_filepath = populate_setting_values(filepath, settings)
     create_folder_for_filepath(populated_filepath)
 
