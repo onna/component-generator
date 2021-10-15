@@ -23,7 +23,7 @@ def read(*names, **kwargs):
 
 setup(
     name='component-generator',
-    version='0.0.0',
+    version='0.1.0',
     license='BSD-2-Clause',
     description='Generate backend components quickly',
     long_description='%s\n%s' % (

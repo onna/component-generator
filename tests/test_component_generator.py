@@ -1,5 +1,4 @@
-
-from component_generator.cli import main
+from cli import main
 
 
 def test_main():
