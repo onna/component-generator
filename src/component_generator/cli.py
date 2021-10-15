@@ -26,13 +26,11 @@ parser.add_argument("--consumer", help="Consumer name.")
 
 def main(args=None):
     args = parser.parse_args(args=args)
-    parts = args.component or args.service or args.upload
 
-    if not parts:
-        parser.error("Please pass one of the component, service, or consumer args")
-    if args.component:
-        generate_component(ComponentType.COMPONENT, args.component)
+    if not hasattr(args, "component"):
+        parser.error("Please pass component name")
+    generate_component(ComponentType.COMPONENT, args.component, args.component)
     if args.service:
-        generate_component(ComponentType.SERVICE, args.service)
+        generate_component(ComponentType.SERVICE, args.service, args.component)
     if args.consumer:
-        generate_component(ComponentType.CONSUMER, args.consumer)
+        generate_component(ComponentType.CONSUMER, args.consumer, args.component)
