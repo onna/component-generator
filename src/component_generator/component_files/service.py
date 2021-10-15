@@ -192,7 +192,7 @@ class HTTPApplication(FastAPI):
     async def finalize(self) -> None:
         ...
 """,
-    "+${componentName}/commands.py": """
+    "+${componentName}/${componentName}/commands.py": """
 def run_${serviceName}():
     settings = get_settings()
     asyncio.run(_run_${serviceName}(settings))
@@ -211,7 +211,7 @@ async def _run_${serviceName}(settings: Settings):
     server = uvicorn.Server(config=http_config)
     await server.serve()
 """,
-    "+pyproject.toml": """
+    "+${componentName}/pyproject.toml": """
 ${serviceName} = '${componentName}.commands:run_${serviceName}'
 """,
 }

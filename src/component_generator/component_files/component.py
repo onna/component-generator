@@ -301,7 +301,7 @@ class Settings(BaseSettings):
     #
     # 	Chart
     #
-    "${componentName}/charts/${componentName}/Chart.yaml": """apiVersion: v1
+    "charts/${componentName}/Chart.yaml": """apiVersion: v1
 appVersion: 1.4.2
 description: ${componentName}
 name: ${componentName}
@@ -312,9 +312,9 @@ maintainers:
   email: platform@onna.com
 version: 99999.99999.99999
 """,
-    "${componentName}/charts/${componentName}/requirements.yaml": """dependencies:
+    "charts/${componentName}/requirements.yaml": """dependencies:
 """,
-    "${componentName}/charts/${componentName}/values.yaml": """image: IMAGE_TO_REPLACE
+    "charts/${componentName}/values.yaml": """image: IMAGE_TO_REPLACE
 pullSecrets: []
 
 
@@ -326,7 +326,7 @@ pullSecrets: []
     + END_BLOCK
     + """
 """,
-    "${componentName}/charts/${componentName}/templates/_helpers.tpl": """{{/* vim: set filetype=mustache: */}}
+    "charts/${componentName}/templates/_helpers.tpl": """{{/* vim: set filetype=mustache: */}}
 {{/* Expand the name of the chart. */}}
 {{- define "name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
@@ -336,7 +336,7 @@ pullSecrets: []
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}""",
-    "${componentName}/charts/${componentName}/templates/cm.yaml": """apiVersion: v1
+    "charts/${componentName}/templates/cm.yaml": """apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ template "name" . }}-config

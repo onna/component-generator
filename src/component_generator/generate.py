@@ -25,9 +25,10 @@ COMPONENT_FILESTRUCTURE = {
 }
 
 
-def generate_component(component_type: ComponentType, component_name: str):
+def generate_component(component_type: ComponentType, component_name: str, main_component_name: str):
     settings = load_settings_from_file()
     settings[f"{component_type.value}Name"] = component_name
+    settings[f"{ComponentType.COMPONENT.value}Name"] = main_component_name
     generate(COMPONENT_FILESTRUCTURE[component_type], settings)
 
 

@@ -167,7 +167,7 @@ class HTTPApplication(FastAPI):
     async def finalize(self) -> None:
         ...
 """,
-    "+${componentName}/commands.py": """
+    "+${componentName}/${componentName}/commands.py": """
 def run_${consumerName}():
     settings = get_settings()
     asyncio.run(_run_${consumerName}(settings))
@@ -181,7 +181,7 @@ async def _run_${consumerName}(settings: Settings):
 	http_app = ${consumerName}.HTTPApplication(consumer_app)
 	await serve_consumer_app(http_app, consumer_app, port=8080)
 """,
-    "+pyproject.toml": """
+    "+${componentName}/pyproject.toml": """
 ${consumerName} = '${componentName}.commands:run_${consumerName}'
 """,
 }
