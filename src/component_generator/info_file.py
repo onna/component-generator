@@ -1,6 +1,6 @@
 from typing import Dict
 
-from component_generator.helpers import populate_setting_values
+from helpers import populate_setting_values
 
 START_BLOCK = "#<!----ANNO"
 END_BLOCK = "#ANNO ---->"

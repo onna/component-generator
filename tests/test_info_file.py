@@ -3,7 +3,7 @@ from unittest.mock import call
 import pytest  # type: ignore
 from pytest_mock import MockFixture  # type: ignore
 
-from component_generator.info_file import (
+from info_file import (
     _check_info_file,
     InfoFileNotUpdatableException,
     _append_filedata,

@@ -1,6 +1,6 @@
 from pytest_mock import MockFixture  # type: ignore
 
-from component_generator.generate import generate
+from generate import generate
 
 
 def test_generate_should_call_append_to_info_file_if_filepath_startswith_plus(mocker: MockFixture):

@@ -16,6 +16,8 @@ Why does this file exist, and why not put this in __main__?
 """
 import argparse
 
+from generate import generate_component, ComponentType
+
 parser = argparse.ArgumentParser(description="Component Generator.")
 parser.add_argument("--component", help="Component name.")
 parser.add_argument("--service", help="Service name.")
@@ -28,3 +30,9 @@ def main(args=None):
 
     if not parts:
         parser.error("Please pass one of the component, service, or consumer args")
+    if args.component:
+        generate_component(ComponentType.COMPONENT, args.component)
+    if args.service:
+        generate_component(ComponentType.SERVICE, args.service)
+    if args.consumer:
+        generate_component(ComponentType.CONSUMER, args.consumer)

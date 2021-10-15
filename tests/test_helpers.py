@@ -1,6 +1,6 @@
 from pytest_mock import MockFixture
 
-from component_generator.helpers import create_folder_for_filepath, populate_setting_values
+from helpers import create_folder_for_filepath, populate_setting_values
 
 
 def test_create_folder_for_filepath(mocker: MockFixture):
