@@ -15,7 +15,13 @@ def insert_info_file(filepath: str, filedata_part: str, settings: Dict[str, str]
 
 
 def generate_file(filepath: str, filedata: str, settings: Dict[str, str]):
-    pass
+    populated_filepath = populate_setting_values(filepath, settings)
+    create_folder_for_filepath(populated_filepath)
+
+    if os.path.exists(populated_filepath):
+        raise FileExistsError
+    with open(populated_filepath, "w") as file:
+        file.write(populate_setting_values(filedata, settings))
 
 
 def populate_setting_values(string: str, settings: Dict[str, str]) -> str:
