@@ -51,9 +51,9 @@ Overview
     :alt: Supported implementations
     :target: https://pypi.org/project/component-generator
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/onna/python-component-generator/v0.0.0.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/onna/python-component-generator/v0.1.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/onna/python-component-generator/compare/v0.0.0...master
+    :target: https://github.com/onna/python-component-generator/compare/v0.1.0...master
 
 
 
