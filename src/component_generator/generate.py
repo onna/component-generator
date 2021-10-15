@@ -29,13 +29,13 @@ def generate_component(component_type: ComponentType, component_name: str, main_
     settings = load_settings_from_file()
     settings[f"{component_type.value}Name"] = component_name
     settings[f"{ComponentType.COMPONENT.value}Name"] = main_component_name
-    generate(COMPONENT_FILESTRUCTURE[component_type], settings)
+    generate(main_component_name, COMPONENT_FILESTRUCTURE[component_type], settings)
 
 
-def generate(structure: Dict[str, str], settings: Dict[str, str]):
+def generate(component_name: str, structure: Dict[str, str], settings: Dict[str, str]):
     for filepath, filedata in structure.items():
         if filepath.startswith("+"):
-            filepath = f"component/{filepath[1:]}"
+            filepath = f"{component_name}/{filepath[1:]}"
             append_to_info_file(filepath, filedata, settings)
         else:
             filepath = f"component/{filepath}"
