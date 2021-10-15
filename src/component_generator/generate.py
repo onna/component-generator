@@ -2,6 +2,7 @@ import os
 from typing import Dict
 
 from component_generator.constants import START_BLOCK, END_BLOCK
+from component_generator.helpers import populate_setting_values, create_folder_for_filepath
 
 
 class FileNotUpdatableException(Exception):
@@ -49,17 +50,3 @@ def generate_file(filepath: str, filedata: str, settings: Dict[str, str]):
         raise FileExistsError
     with open(populated_filepath, "w") as file:
         file.write(populate_setting_values(filedata, settings))
-
-
-def populate_setting_values(string: str, settings: Dict[str, str]) -> str:
-    for key, val in settings.items():
-        string = string.replace(f"${{{key}}}", val)
-    return string
-
-
-def create_folder_for_filepath(filepath: str):
-    try:
-        folderpath = filepath[: filepath.rindex("/")]
-        os.makedirs(folderpath)
-    except (ValueError, FileExistsError):
-        pass
