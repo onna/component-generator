@@ -35,13 +35,14 @@ def generate_component(component_type: ComponentType, component_name: str, main_
 def generate(structure: Dict[str, str], settings: Dict[str, str]):
     for filepath, filedata in structure.items():
         if filepath.startswith("+"):
-            append_to_info_file(filepath[1:], filedata, settings)
+            filepath = f"component/{filepath[1:]}"
+            append_to_info_file(filepath, filedata, settings)
         else:
+            filepath = f"component/{filepath}"
             generate_file(filepath, filedata, settings)
 
 
 def generate_file(filepath: str, filedata: str, settings: Dict[str, str]):
-    filepath = f"component/{filepath}"
     populated_filepath = populate_setting_values(filepath, settings)
     create_folder_for_filepath(populated_filepath)
 
