@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python-component-generator"
+name = "component-generator"
 version = "0.0.0"
 description = "Generate a backend component quickly."
 authors = ["Darren Buttigieg <darren@onna.com>"]
