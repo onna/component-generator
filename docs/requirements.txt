@@ -1,2 +1,4 @@
 sphinx>=1.3
 sphinx-rtd-theme
+myst-parser==0.16.1
+furo==2022.1.2

@@ -15,3 +15,9 @@ POETRY ?= poetry
 .PHONY: install-dev
 install-dev: ## Install dev setup/env
 	$(POETRY) install
+
+.PHONY: build-docs
+build-docs: ##Build docs locally
+	pushd docs; \
+	$(POETRY) run sphinx-build -b html . _build; \
+	popd; \
