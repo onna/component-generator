@@ -1,11 +1,16 @@
 [tool.poetry]
 name = "python-component-generator"
-version = "0.0.0"
+version = "0.0.1"
 description = "Generate a backend component quickly."
-authors = ["Darren Buttigieg <darren@onna.com>"]
+authors = [
+    "Darren Buttigieg <darren@onna.com>",
+    "Sven Strack <sven@onna.com>",
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+myst-parser = "^0.16.1"
+furo = "^2022.1.2"
 
 [tool.poetry.dev-dependencies]
 black = "^21.9b0"
